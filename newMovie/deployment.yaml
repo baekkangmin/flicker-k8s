@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newMovie
+  labels:
+    app: newMovie
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: newMovie
+  template:
+    metadata:
+      labels:
+        app: newMovie
+    spec:
+      containers:
+        - name: newMovie
+          image: 566584275819.dkr.ecr.ap-northeast-2.amazonaws.com/kmbaek:newMovie
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
