@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newMovie
+  name: newmovie
   labels:
-    app: newMovie
+    app: newmovie
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: newMovie
+      app: newmovie
   template:
     metadata:
       labels:
-        app: newMovie
+        app: newmovie
     spec:
       containers:
-        - name: newMovie
+        - name: newmovie
           image: 566584275819.dkr.ecr.ap-northeast-2.amazonaws.com/kmbaek:newMovie
           imagePullPolicy: Always
           ports:
